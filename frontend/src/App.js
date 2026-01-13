@@ -33,12 +33,15 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const api= process.env.REACT_APP_API_URL
+
   const handlePrediction = async (formData) => {
     setLoading(true);
     setError(null);
     
     try {
-      const response = await fetch('/predict', {
+      
+      const response = await fetch(`${api}/predict`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
