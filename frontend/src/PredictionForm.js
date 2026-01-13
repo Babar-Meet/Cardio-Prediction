@@ -358,7 +358,7 @@ const PredictionForm = ({ onSubmit, loading }) => {
                             color="success"
                           />
                         }
-                        label="ACTIVE"
+                        label="PHYSICAL ACTIVITY"
                         labelPlacement="top"
                         sx={{ m: 0 }}
                       />
