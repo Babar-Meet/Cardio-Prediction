@@ -141,7 +141,7 @@ function App() {
               border: '1px solid rgba(0, 243, 255, 0.3)',
               background: 'rgba(0, 243, 255, 0.1)'
             }}>
-              <Typography variant="caption" sx={{ opacity: 0.7 }}>MODEL V2.1.4</Typography>
+              <Typography variant="caption" sx={{ opacity: 0.7 }}>MODEL V1.0</Typography>
             </Box>
             <Box sx={{ 
               px: 3, 
@@ -157,7 +157,7 @@ function App() {
               border: '1px solid rgba(255, 0, 85, 0.3)',
               background: 'rgba(255, 0, 85, 0.1)'
             }}>
-              <Typography variant="caption" sx={{ opacity: 0.7 }}>74.2% ACCURACY</Typography>
+              <Typography variant="caption" sx={{ opacity: 0.7 }}>73% ACCURACY</Typography>
             </Box>
           </Box>
         </Box>
