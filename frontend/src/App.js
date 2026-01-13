@@ -275,38 +275,49 @@ function App() {
                 ) : result ? (
                   <Fade in={true}>
                     <Box>
-                      {/* Risk Score Display */}
-                      <Box sx={{ textAlign: 'center', my: 4 }}>
+                      {/* Risk Score Display - Mobile Optimized */}
+                      <Box sx={{ textAlign: 'center', my: { xs: 3, md: 4 } }}>
                         <Box sx={{ 
-                          width: 200, 
-                          height: 200, 
+                          width: { xs: 220, sm: 300, md: 350, lg: 410 },
+                          height: { xs: 220, sm: 300, md: 350, lg: 410 },
                           mx: 'auto',
                           background: getRiskGradient(result.probability),
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           position: 'relative',
-                          mb: 3,
-                          boxShadow: `0 0 40px ${getRiskColor(result.probability)}`,
-                          border: '2px solid rgba(255, 255, 255, 0.2)'
+                          mb: { xs: 2, md: 3 },
+                          boxShadow: `0 0 ${result.probability > 70 ? '40px' : '30px'} ${getRiskColor(result.probability)}`,
+                          borderWidth: { xs: '1px', sm: '2px', lg: '3px' },
+                          borderStyle: 'solid',
+                          borderColor: 'rgba(255, 255, 255, 0.3)'
                         }}>
                           <Box sx={{ 
-                            width: 160, 
-                            height: 160, 
+                            width: { xs: 180, sm: 260, md: 310, lg: 360 },
+                            height: { xs: 180, sm: 260, md: 310, lg: 360 },
                             background: '#0a0a0a',
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            border: '2px solid rgba(255, 255, 255, 0.1)'
+                            borderWidth: { xs: '1px', sm: '2px', lg: '3px' },
+                            borderStyle: 'solid',
+                            borderColor: 'rgba(255, 255, 255, 0.15)'
                           }}>
                             <Typography variant="h1" sx={{ 
-                              fontSize: '4rem',
+                              fontSize: { 
+                                xs: '2.5rem',
+                                sm: '3rem',
+                                md: '3.5rem',
+                                lg: '4.5rem'
+                              },
                               fontWeight: 700,
                               background: getRiskGradient(result.probability),
                               WebkitBackgroundClip: 'text',
                               WebkitTextFillColor: 'transparent',
-                              lineHeight: 1
+                              lineHeight: 1,
+                              mb: { xs: 0, sm: 0.5 },
+                              px: 1
                             }}>
                               {result.probability}%
                             </Typography>
@@ -315,8 +326,16 @@ function App() {
                               sx={{ 
                                 color: getRiskColor(result.probability),
                                 fontWeight: 700,
-                                letterSpacing: '2px',
-                                mt: 1
+                                letterSpacing: { xs: '0.5px', md: '2px' },
+                                mt: { xs: 0.25, md: 0.5 },
+                                fontSize: { 
+                                  xs: '0.75rem',
+                                  sm: '0.9rem',
+                                  md: '1rem',
+                                  lg: '1.125rem'
+                                },
+                                textAlign: 'center',
+                                px: 1
                               }}
                             >
                               {result.risk_category.toUpperCase()}
