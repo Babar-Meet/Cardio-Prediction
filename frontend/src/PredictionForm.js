@@ -370,51 +370,76 @@ const PredictionForm = ({ onSubmit, loading }) => {
           </Paper>
         </Grid>
 
-        {/* Action Buttons */}
-        <Grid item xs={12}>
-          <Paper className="glass-dark" sx={{ p: 2.5, border: '1px solid rgba(0, 243, 255, 0.3)' }}>
-            <Grid container spacing={2} alignItems="center">
-              <Grid item xs={12} md={8}>
-                <Alert 
-                  severity="info" 
-                  className="glass-dark"
-                  icon={false}
-                  sx={{ border: '1px solid rgba(0, 243, 255, 0.2)' }}
-                >
-                  <Typography variant="caption" sx={{ fontFamily: 'JetBrains Mono' }}>
-                    Complete all 12 biometric parameters for neural analysis.
-                  </Typography>
-                </Alert>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Box sx={{ display: 'flex', gap: 2, justifyContent: { xs: 'center', md: 'flex-end' } }}>
-                  <Button
-                    variant="outlined"
-                    startIcon={<RestartAltIcon />}
-                    onClick={handleReset}
-                    disabled={loading}
-                    sx={{ 
-                      borderColor: 'rgba(255, 255, 255, 0.3)',
-                      color: '#fff'
-                    }}
-                  >
-                    RESET
-                  </Button>
-                  <LoadingButton
-                    type="submit"
-                    variant="contained"
-                    startIcon={<CalculateIcon />}
-                    loading={loading}
-                    loadingPosition="start"
-                    className="cyber-button"
-                  >
-                    ANALYZE
-                  </LoadingButton>
-                </Box>
-              </Grid>
-            </Grid>
-          </Paper>
-        </Grid>
+{/* Action Buttons */}
+<Grid item xs={12}>
+  <Paper className="glass-dark" sx={{ p: 2.5, border: '1px solid rgba(0, 243, 255, 0.3)' }}>
+    <Grid container spacing={2} alignItems="center">
+      <Grid item xs={12} md={8}>
+        <Alert 
+          severity="info" 
+          className="glass-dark"
+          icon={false}
+          sx={{ 
+            border: '1px solid rgba(0, 243, 255, 0.2)',
+            py: 1,
+            '& .MuiAlert-message': {
+              width: '100%'
+            }
+          }}
+        >
+          <Typography variant="caption" sx={{ 
+            fontFamily: 'JetBrains Mono',
+            display: 'block',
+            lineHeight: 1.2
+          }}>
+            Complete all 12 biometric parameters for neural analysis.
+          </Typography>
+        </Alert>
+      </Grid>
+      <Grid item xs={12} md={4}>
+        <Box sx={{ 
+          display: 'flex', 
+          gap: 2, 
+          justifyContent: { xs: 'center', md: 'flex-end' },
+          flexWrap: 'wrap' 
+        }}>
+          <Button
+            variant="outlined"
+            startIcon={<RestartAltIcon />}
+            onClick={handleReset}
+            disabled={loading}
+            sx={{ 
+              borderColor: 'rgba(255, 255, 255, 0.3)',
+              color: '#fff',
+              fontSize: '1rem',
+              padding: '10px 24px',
+              minHeight: '48px',
+              minWidth: '165px',
+            }}
+          >
+            RESET
+          </Button>
+          <LoadingButton
+            type="submit"
+            variant="contained"
+            startIcon={<CalculateIcon />}
+            loading={loading}
+            loadingPosition="start"
+            className="cyber-button"
+            sx={{ 
+              fontSize: '1rem',
+              padding: '10px 24px',
+              minHeight: '48px',
+              minWidth: '120px'
+            }}
+          >
+            ANALYZE
+          </LoadingButton>
+        </Box>
+      </Grid>
+    </Grid>
+  </Paper>
+</Grid>
       </Grid>
     </Box>
   );
