@@ -35,7 +35,8 @@ function App() {
 
   const api= process.env.REACT_APP_API_URL
 
-const handlePrediction = async (formData) => {
+
+  const handlePrediction = async (formData) => {
   setLoading(true);
   setError(null);
   
@@ -71,6 +72,36 @@ const handlePrediction = async (formData) => {
     setLoading(false);
   }
 };
+
+// old code
+  // const handlePrediction = async (formData) => {
+  //   setLoading(true);
+  //   setError(null);
+    
+  //   try {
+      
+  //     const response = await fetch(`${api}/predict`, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+      
+  //     const data = await response.json();
+      
+  //     if (data.success) {
+  //       setResult(data);
+  //     } else {
+  //       setError(data.error || 'Prediction failed');
+  //     }
+  //   } catch (err) {
+  //     setError('Failed to connect to the server. Make sure the backend is running on port 5000.');
+  //     console.error('Error:', err);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const getRiskColor = (probability) => {
     if (probability < 30) return '#00ff9d';
