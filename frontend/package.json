@@ -1,14 +1,13 @@
 {
-  "name": "neural-health-frontend",
-  "version": "0.1.0",
+  "name": "cardio-prediction-frontend",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.16",
-    "@mui/lab": "^5.0.0-alpha.156",
-    "@mui/material": "^5.14.18",
-    "dotenv": "^17.2.3",
+    "@mui/icons-material": "^5.14.0",
+    "@mui/material": "^5.14.0",
+    "@mui/lab": "^5.0.0-alpha.148",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
@@ -19,9 +18,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": [
-      "react-app"
+      "react-app",
+      "react-app/jest"
     ]
   },
   "browserslist": {
