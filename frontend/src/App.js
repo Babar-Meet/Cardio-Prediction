@@ -152,7 +152,7 @@ function App() {
               border: '1px solid rgba(255, 0, 85, 0.3)',
               background: 'rgba(255, 0, 85, 0.1)'
             }}>
-              <Typography variant="caption" sx={{ opacity: 0.7 }}>74.2% ACCURACY</Typography>
+              <Typography variant="caption" sx={{ opacity: 0.7 }}>73% ACCURACY</Typography>
             </Box>
           </Box>
         </Box>
