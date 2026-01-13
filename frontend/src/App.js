@@ -33,12 +33,16 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // Get API URL from environment variable or use development URL
+  const API_URL = process.env.REACT_APP_API_URL || '';
+
   const handlePrediction = async (formData) => {
     setLoading(true);
     setError(null);
     
     try {
-      const response = await fetch('/predict', {
+      // Use environment variable for API URL
+      const response = await fetch(`${API_URL}/predict`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,10 +55,11 @@ function App() {
       if (data.success) {
         setResult(data);
       } else {
-        setError(data.error || 'Prediction failed');
+        setError(data.error || 'Prediction failed. Please check your input and try again.');
       }
     } catch (err) {
-      setError('Failed to connect to the server. Make sure the backend is running on port 5000.');
+      // Updated error message for production
+      setError('Failed to connect to the prediction server. The backend might be starting up or experiencing issues. Please try again in a moment.');
       console.error('Error:', err);
     } finally {
       setLoading(false);
@@ -476,6 +481,16 @@ function App() {
             mt: 1
           }}>
             This system provides AI-based risk analysis. Not intended for medical diagnosis.
+          </Typography>
+          {/* Debug info - remove in production if you want */}
+          <Typography variant="caption" sx={{ 
+            opacity: 0.2, 
+            textAlign: 'center',
+            display: 'block',
+            mt: 1,
+            fontSize: '0.6rem'
+          }}>
+            API URL: {API_URL || 'Using relative URL'}
           </Typography>
         </Box>
       </Container>
