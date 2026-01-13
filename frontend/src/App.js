@@ -33,16 +33,12 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Get API URL from environment variable or use development URL
-  const API_URL = process.env.REACT_APP_API_URL || '';
-
   const handlePrediction = async (formData) => {
     setLoading(true);
     setError(null);
     
     try {
-      // Use environment variable for API URL
-      const response = await fetch(`${API_URL}/predict`, {
+      const response = await fetch('/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,11 +51,10 @@ function App() {
       if (data.success) {
         setResult(data);
       } else {
-        setError(data.error || 'Prediction failed. Please check your input and try again.');
+        setError(data.error || 'Prediction failed');
       }
     } catch (err) {
-      // Updated error message for production
-      setError('Failed to connect to the prediction server. The backend might be starting up or experiencing issues. Please try again in a moment.');
+      setError('Failed to connect to the server. Make sure the backend is running on port 5000.');
       console.error('Error:', err);
     } finally {
       setLoading(false);
@@ -141,7 +136,7 @@ function App() {
               border: '1px solid rgba(0, 243, 255, 0.3)',
               background: 'rgba(0, 243, 255, 0.1)'
             }}>
-              <Typography variant="caption" sx={{ opacity: 0.7 }}>MODEL V1.0</Typography>
+              <Typography variant="caption" sx={{ opacity: 0.7 }}>MODEL V1.0.0</Typography>
             </Box>
             <Box sx={{ 
               px: 3, 
@@ -157,7 +152,7 @@ function App() {
               border: '1px solid rgba(255, 0, 85, 0.3)',
               background: 'rgba(255, 0, 85, 0.1)'
             }}>
-              <Typography variant="caption" sx={{ opacity: 0.7 }}>73% ACCURACY</Typography>
+              <Typography variant="caption" sx={{ opacity: 0.7 }}>74.2% ACCURACY</Typography>
             </Box>
           </Box>
         </Box>
@@ -472,7 +467,7 @@ function App() {
             textAlign: 'center',
             display: 'block'
           }}>
-            NEURAL HEALTH ANALYTICS • AI-POWERED RISK ASSESSMENT • V2.1.4 • DATA UPDATED: {new Date().toLocaleDateString()}
+            NEURAL HEALTH ANALYTICS • AI-POWERED RISK ASSESSMENT • V1.0.0 • DATA UPDATED: {new Date().toLocaleDateString()}
           </Typography>
           <Typography variant="caption" sx={{ 
             opacity: 0.3, 
@@ -481,16 +476,6 @@ function App() {
             mt: 1
           }}>
             This system provides AI-based risk analysis. Not intended for medical diagnosis.
-          </Typography>
-          {/* Debug info - remove in production if you want */}
-          <Typography variant="caption" sx={{ 
-            opacity: 0.2, 
-            textAlign: 'center',
-            display: 'block',
-            mt: 1,
-            fontSize: '0.6rem'
-          }}>
-            API URL: {API_URL || 'Using relative URL'}
           </Typography>
         </Box>
       </Container>
