@@ -137,15 +137,27 @@ def get_recommendations(data, probability):
                 "Elevated blood pressure. Consult with a healthcare provider."
             )
 
-    if data.get('smoke') == 1:
+    #this is update to refined the model output
+    if data.get('smoke') == 0:
         recommendations.append(
             "Smoking increases cardiovascular risk. Consider quitting."
         )
 
-    if data.get('alco') == 1:
+    if data.get('alco') == 0:
         recommendations.append(
             "Limit alcohol consumption to reduce cardiovascular risk."
         )
+    
+    # if we fix model this is the right one fo uncomment
+    # if data.get('smoke') == 1:
+    #     recommendations.append(
+    #         "Smoking increases cardiovascular risk. Consider quitting."
+    #     )
+
+    # if data.get('alco') == 1:
+    #     recommendations.append(
+    #         "Limit alcohol consumption to reduce cardiovascular risk."
+    #     )
 
     if data.get('active') == 0:
         recommendations.append(
