@@ -528,7 +528,8 @@ function App() {
             textAlign: 'center',
             display: 'block'
           }}>
-            NEURAL HEALTH ANALYTICS • AI-POWERED RISK ASSESSMENT • V1.0.0 • DATA UPDATED: {new Date().toLocaleDateString()}
+           NEURAL HEALTH ANALYTICS • AI-POWERED RISK ASSESSMENT • V1.0.0 • DATA UPDATED: 13 / 1 / 2026
+          // NEURAL HEALTH ANALYTICS • AI-POWERED RISK ASSESSMENT • V1.0.0 • DATA UPDATED: {new Date().toLocaleDateString()}
           </Typography>
           <Typography variant="caption" sx={{ 
             opacity: 0.3, 
