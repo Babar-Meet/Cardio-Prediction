@@ -87,7 +87,7 @@ const PredictionForm = ({ onSubmit, loading }) => {
   const getBMICategory = (bmi) => {
         // near-edge biscuit jokes
         if (bmi >= 18 && bmi < 18.5) return 'Underweight — just 1 biscuits above skeleton mode';
-        if (bmi >= 24.5 && bmi < 25) return 'Normal — 3  Dabeli away from Over Weight';
+        if (bmi >= 24.5 && bmi < 25) return 'Normal — 1 Dabeli away from Over Weight';
         if (bmi >= 29.5 && bmi < 30) return 'Over Weight — just 1 biscuit away from Obese';
         if (bmi >= 34.5 && bmi < 35) return 'Obese — 1 biscuit away from Extremely Obese';
         
