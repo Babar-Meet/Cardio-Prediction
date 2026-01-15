@@ -223,8 +223,8 @@ def get_features():
             'gluc': 1,
             'smoke': 0,
             'alco': 0,
-            'active': 1,
-            'age': 50
+            'active': 0,
+            'age': 18
         }
     })
 

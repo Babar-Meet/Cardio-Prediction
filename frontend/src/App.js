@@ -67,7 +67,7 @@ function App() {
       setError(data.error || 'Prediction failed');
     }
   } catch (err) {
-    setError('Failed to connect to the server. Make sure the backend is running on port 5000.');
+    setError('Something Went Wrong, We are Sorry But Please Try Again');
     console.error('Error:', err);
   } finally {
     setLoading(false);
