@@ -319,7 +319,7 @@ A custom MUI dark theme with:
 
 | Variable | Location | Purpose | Example |
 |----------|----------|---------|---------|
-| `REACT_APP_API_URL` | `frontend/.env` | Backend API base URL (no trailing slash) | `https://cardio-prediction-40k1.onrender.com` |
+| `REACT_APP_API_URL` | `frontend/.env` | Backend API base URL (no trailing slash) | `https://your-backend-url.onrender.com` |
 | `PORT` | Backend runtime | Server port (Render sets this automatically) | `5000` (fallback) |
 
 **.env file handling**: `frontend/.env` is committed (contains only the Render URL). The `.gitignore` excludes `.env`, `.env.local`, and `.env.*.local` patterns.
